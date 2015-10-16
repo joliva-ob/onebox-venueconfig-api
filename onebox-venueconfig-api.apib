@@ -38,7 +38,11 @@ List all the venues with its key data and the activities allowed for  each one. 
             "version": "1.0",
             "href": "http://www.oneboxtm.com/venueconfig-api/v1.0/venues",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 200,
+            "error_code": "",
+            "error_description": "",
             "parameters":
             {
               "id": "",
@@ -243,13 +247,45 @@ List all the venues with its key data and the activities allowed for  each one. 
 + Response 400 (application/json)
 
         {
-          "error": "Bad request",
-          "error_description": "There was a syntax error, check your params request and try it again."
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/v1.0/venues",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "id": "",
+              "page": 1
+            },
+            "venues": [],
+            "links": []
+          }
         }
 
 + Response 401 (application/json)
 
         {
-          "error": "unauthorized",
-          "error_description": "Full authentication is required to access this resource"
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/v1.0/venues",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 401,
+            "error_code": "Unauthorized",
+            "error_description": "Full authentication is required to access this resource"
+            "parameters":
+            {
+              "id": "",
+              "page": 1
+            },
+            "venues": [],
+            "links": []
+          }
         }
