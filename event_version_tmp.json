@@ -1,0 +1,189 @@
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 200,
+            "error_code": "",
+            "error_description": "",
+            "parameters":
+            {
+              "venue_id": "125",
+              "id": "",
+              "page": 2
+            },
+            "events": [
+              {
+                "id": "125",
+                "name": "Partido de prueba",
+                "seating_capacity_id": 1,
+                "activity_id": 1,
+                "round": "10",
+                "date": "2015-10-30T17:00:00+01:00",
+                "final_date": true,
+                "season": "14-15",
+                "zone_selling": true,
+                "second_market": true,
+                "package_selling": false,
+                "partner_selling": true,
+                "fun_selling": false,
+                "released_seats_selling": true,
+                "early_released_seats_selling": true,
+                "available": true,
+                "start_date": "2015-10-30T17:00:00+01:00",
+                "end_date": "2015-10-30T17:00:00+01:00",
+
+              }
+              
+          ],
+          "links": [
+            {
+              "name": "next_page",
+              "prompt": "Next",
+              "rel": "next",
+              "href": "venues/125/events/?page=3",
+              "render": "link"
+            },
+            {
+              "name": "previous_page",
+              "prompt": "Bext",
+              "rel": "back",
+              "href": "venues/125/events/?page=1",
+              "render": "link"
+            }
+          ]
+        }
+      }
+
+
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 200,
+            "error_code": "",
+            "error_description": "",
+            "parameters":
+            {
+              "event_id": "125",
+              "id": "",
+              "page": 2
+            },
+            "venues": [
+              {
+                "id": "51",
+                "name": "Futbol Club Barcelona",
+                "ip": "10.234.22.5",
+                "port": 60000,
+                "seating_capacities": [
+                  {
+                    "id": "1",
+                    "name": "LIGA",
+                    "activities": [
+                      {
+                        "id": "1",
+                        "name": "LIGA",
+                        "events": [
+                          {
+                            "id": "125",
+                            "name": "PArtido de prueba",
+                            "round": "10",
+                            "date": "2015-10-30T17:00:00+01:00",
+                            "final_date": true,
+                            "season": "14-15",
+                            "zone_selling": true,
+                            "second_market": true,
+                            "package_selling": false,
+                            "partner_selling": true,
+                            "fun_selling": false,
+                            "released_seats_selling": true,
+                            "early_released_seats_selling": true,
+                            "available": true,
+                            "start_date": "2015-10-30T17:00:00+01:00",
+                            "end_date": "2015-10-30T17:00:00+01:00",
+
+                          }
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "SUPERCOPA"
+                      },
+                      {
+                        "id": "3",
+                        "name": "CHAMPIONS"
+                      },
+                      {
+                        "id": "4",
+                        "name": "COPA DEL REY"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "PARKING",
+                    "activities": [
+                      {
+                        "id": "1",
+                        "name": "PARKING"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "3",
+                    "name": "EUROPA",
+                    "activities": [
+                      {
+                        "id": "1",
+                        "name": "UEFA"
+                      },
+                      {
+                        "id": "2",
+                        "name": "CHAMPIONS"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "4",
+                    "name": "CONCIERTOS",
+                    "activities": [
+                      {
+                        "id": "1",
+                        "name": "UNICA"
+                      }
+                    ]
+                  }
+                ],
+                "settings":
+                {
+                  "confirmation_release_time": 5,
+                  "cancellation_release_time": 60,
+                  "pre_order_trials_limit": 3,
+                  "second_market": false,
+                  "partner_selling": true,
+                  "max_tickets_order": 5,
+                  "allowed_seat_status": [
+                    {
+                      "id": "L"
+                    },
+                    {
+                      "id": "S"
+                    },
+                    {
+                      "id": "X"
+                    }
+                  ],
+                  "pending_booking_seat_status": "Z",
+                  "pending_booking_confirmation_allowed": false
+                }
+            }
+        }

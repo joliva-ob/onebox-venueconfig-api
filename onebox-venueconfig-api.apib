@@ -14,7 +14,7 @@ HOST: http://onebox-venueconfig-api.getsandbox.com/
  + [mockapi](https://github.com/joliva-ob/mockapi)
  + [github](https://github.com/joliva-ob/onebox-venueconfig-api)
 
-## Venues Collection [/venueconfig-api/v1.0/venues{?id,page}]
+## Venues Collection [/venueconfig-api/1.0/venues{?id,page}]
 List all the venues with its key data and the activities allowed for  each one. It is also allowed filtering by Id and paging.
 
 ### List All Events [GET]
@@ -36,7 +36,7 @@ List all the venues with its key data and the activities allowed for  each one. 
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/v1.0/venues",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
@@ -54,7 +54,7 @@ List all the venues with its key data and the activities allowed for  each one. 
                 "name": "Futbol Club Barcelona",
                 "ip": "10.234.22.5",
                 "port": 60000,
-                "capacities": [
+                "seating_capacities": [
                   {
                     "id": "1",
                     "name": "LIGA",
@@ -140,7 +140,7 @@ List all the venues with its key data and the activities allowed for  each one. 
                 "name": "Club Atlético de Madrid",
                 "ip": "10.234.22.1",
                 "port": 60000,
-                "capacities": [
+                "seating_capacities": [
                   {
                     "id": "1",
                     "name": "LIGA",
@@ -204,7 +204,7 @@ List all the venues with its key data and the activities allowed for  each one. 
                   "cancellation_release_time": 60,
                   "pre_order_trials_limit": 3,
                   "second_market": false,
-                  "partners_selling": true,
+                  "partner_selling": true,
                   "max_tickets_order": 5,
                   "allowed_seat_status": [
                     {
@@ -250,7 +250,7 @@ List all the venues with its key data and the activities allowed for  each one. 
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/v1.0/venues",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
@@ -273,7 +273,202 @@ List all the venues with its key data and the activities allowed for  each one. 
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/v1.0/venues",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 401,
+            "error_code": "Unauthorized",
+            "error_description": "Full authentication is required to access this resource"
+            "parameters":
+            {
+              "id": "",
+              "page": 1
+            },
+            "venues": [],
+            "links": []
+          }
+        }
+
+## Venue date events Collection [/venueconfig-api/1.0/venues/{venue_id}/events{?id,page}]
+List all the events from a given venue with its key data. It is also allowed filtering by Id and paging.
+
+### List All Events [GET]
+
++ Request
+
+  + Headers
+
+            Authorization: Bearer OAUTH2_TOKEN
+            Accept: application/json
+
++ Parameters
+    + venue_id (required, text) ... Identifies a specific venue.
+    + id (optional, text) ... Filter by a given event.
+    + page (optional, number) ... Paginate response to the given page number.
+
++ Response 200 (application/json)
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 200,
+            "error_code": "",
+            "error_description": "",
+            "parameters":
+            {
+              "venue_id": "125",
+              "id": "",
+              "page": 2
+            },
+            "events": [
+              {
+                "id": "125",
+                "name": "Partido de prueba",
+                "seating_capacity_id": 1,
+                "activity_id": 1,
+                "round": "10",
+                "date": "2015-10-30T17:00:00+01:00",
+                "final_date": true,
+                "season": "14-15",
+                "zone_selling": true,
+                "second_market": true,
+                "package_selling": false,
+                "partner_selling": true,
+                "fun_selling": false,
+                "released_seats_selling": true,
+                "early_released_seats_selling": true,
+                "available": true,
+                "general_admission_start_date": "2015-10-30T17:00:00+01:00",
+                "general_admission_end_date": "2015-10-30T17:00:00+01:00",
+                "general_admission_no_print_start_date": "2015-10-30T17:00:00+01:00",
+                "general_admission_no_print_end_date": "2015-10-30T17:00:00+01:00",
+                "supporter_start_date": "2015-10-30T17:00:00+01:00",
+                "supporter_end_date": "2015-10-30T17:00:00+01:00",
+                "supporter_no_print_start_date": "2015-10-30T17:00:00+01:00",
+                "supporter_no_print_end_date": "2015-10-30T17:00:00+01:00",
+                "subscriber_start_date": "2015-10-30T17:00:00+01:00",
+                "subscriber_end_date": "2015-10-30T17:00:00+01:00",
+                "subscriber_no_print_start_date": "2015-10-30T17:00:00+01:00",
+                "subscriber_no_print_end_date": "2015-10-30T17:00:00+01:00",
+                "partner_start_date": "2015-10-30T17:00:00+01:00",
+                "partner_end_date": "2015-10-30T17:00:00+01:00",
+                "partner_no_print_start_date": "2015-10-30T17:00:00+01:00",
+                "partner_no_print_end_date": "2015-10-30T17:00:00+01:00",
+                "general_admission_tickets_limit": 1,
+                "preferred_tickets_limit": 1,
+                "supporter_companion_tickets_limit": 2,
+                "supporter_tickets_limit:" 3,
+                "parent_zones": [
+                  {
+                    "id": "1",
+                    "name": "GRADA PREFERENCIAL",
+                    "update_date": "2015-10-30T17:00:00+01:00",
+                    "zones": [
+                        {
+                          "id": "126",
+                          "name": "GRADA PREFERENCIA BAJA",
+                          "gates": 54
+                        },
+                        {
+                          "id": "127",
+                          "name": "GRADA PREFERENCIA ALTA",
+                          "gates": 1
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "id": "50",
+                          "name": "Grada PREF BAJA",
+                          "price": 60,00
+                        }
+                      ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "GRADA VIP",
+                    "update_date": "2015-10-30T17:00:00+01:00",
+                    "zones": [
+                        {
+                          "id": "12",
+                          "name": "GRADA VIP BAJA",
+                          "gates": 54
+                        },
+                        {
+                          "id": "13",
+                          "name": "GRADA VIP ALTA",
+                          "gates": 1
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "id": "50",
+                          "name": "Grada PREF BAJA",
+                          "price": 60,00
+                        }
+                      ]
+                  }
+                ]
+
+              }
+          ],
+
+          "links": [
+            {
+              "name": "next_page",
+              "prompt": "Next",
+              "rel": "next",
+              "href": "venues/125/events/?page=3",
+              "render": "link"
+            },
+            {
+              "name": "previous_page",
+              "prompt": "Bext",
+              "rel": "back",
+              "href": "venues/125/events/?page=1",
+              "render": "link"
+            }
+          ]
+        }
+      }
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "id": "",
+              "page": 1
+            },
+            "venues": [],
+            "links": []
+          }
+        }
+
++ Response 401 (application/json)
+
+      {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
