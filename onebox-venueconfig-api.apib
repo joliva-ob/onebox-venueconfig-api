@@ -15,7 +15,14 @@ HOST: http://onebox-venueconfig-api.getsandbox.com/
  + [github](https://github.com/joliva-ob/onebox-venueconfig-api)
 
 ## Venues Collection [/venueconfig-api/1.0/venues{?id,page}]
-List all the venues with its key data and the activities allowed for  each one. It is also allowed filtering by Id and paging.
+List all the venues with its key data and the activities allowed for each one. It is also allowed to filtering by Id and paging.
+The following table contains the Spanish Soccer compatibility response fields descriptions:
+
+| Response Field                   | Description                             |
+|----------------------------------|-----------------------------------------|
+| venue                            | Spanish: recinto club                   |
+| capacity                         | Spanish: aforo                          |
+| activities                       | Spanish: competición                    |
 
 ### List All Events [GET]
 
@@ -28,7 +35,7 @@ List all the venues with its key data and the activities allowed for  each one. 
 
 + Parameters
     + id (optional, text) ... Filter by a given venue id.
-    + page (optional, number) ... Paginate response to the given page number.
+    + page (optional, number) ... Paginate response to the given page number
 
 + Response 200 (application/json)
 
@@ -54,7 +61,7 @@ List all the venues with its key data and the activities allowed for  each one. 
                 "name": "Futbol Club Barcelona",
                 "ip": "10.234.22.5",
                 "port": 60000,
-                "seating_capacities": [
+                "capacities": [
                   {
                     "id": "1",
                     "name": "LIGA",
@@ -140,7 +147,7 @@ List all the venues with its key data and the activities allowed for  each one. 
                 "name": "Club Atlético de Madrid",
                 "ip": "10.234.22.1",
                 "port": 60000,
-                "seating_capacities": [
+                "capacities": [
                   {
                     "id": "1",
                     "name": "LIGA",
@@ -291,7 +298,15 @@ List all the venues with its key data and the activities allowed for  each one. 
         }
 
 ## Venue date events Collection [/venueconfig-api/1.0/venues/{venue_id}/events{?id,page}]
-List all the events from a given venue with its key data. It is also allowed filtering by Id and paging.
+List all the events from a given venue with its key data. It is also allowed to filtering by Id and paging.
+The following table contains the Spanish Soccer compatibility response fields descriptions:
+
+| Response Field                   | Description                             |
+|----------------------------------|-----------------------------------------|
+| supporter                        | Spanish: simpatizante                   |
+| subscriber                       | Spanish: abonado                        |
+| partner                          | Spanish: socio                          |
+| suporter_companion               | Spanish: acompañantes simpatizantes     |
 
 ### List All Events [GET]
 
@@ -330,7 +345,7 @@ List all the events from a given venue with its key data. It is also allowed fil
               {
                 "id": "125",
                 "name": "Partido de prueba",
-                "seating_capacity_id": 1,
+                "capacity_id": 1,
                 "activity_id": 1,
                 "round": "10",
                 "date": "2015-10-30T17:00:00+01:00",
@@ -445,7 +460,7 @@ List all the events from a given venue with its key data. It is also allowed fil
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
@@ -454,8 +469,9 @@ List all the events from a given venue with its key data. It is also allowed fil
             "error_description": "There was a syntax error, check your params request and try it again."
             "parameters":
             {
+              "venue_id": "",
               "id": "",
-              "page": 1
+              "page":
             },
             "venues": [],
             "links": []
@@ -468,7 +484,7 @@ List all the events from a given venue with its key data. It is also allowed fil
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
@@ -477,6 +493,182 @@ List all the events from a given venue with its key data. It is also allowed fil
             "error_description": "Full authentication is required to access this resource"
             "parameters":
             {
+              "venue_id": "",
+              "id": "",
+              "page": 1
+            },
+            "venues": [],
+            "links": []
+          }
+        }
+
+## Venue seating capacity details Collection [/venueconfig-api/1.0/venues/{venue_id}/events/{event_id}/capacities{?id,page}]
+List all the seating capacities from a given venue and event with its key data. It is also allowed to filtering by Id and paging.
+The following table contains the Spanish Soccer compatibility response fields descriptions:
+
+| Response Field                   | Description                             |
+|----------------------------------|-----------------------------------------|
+| entrance                         | Spanish: boca                           |
+| gate                             | Spanish: puerta                         |
+| block                            | Spanish: escalera                       |
+| sector                           | Spanish: vomitorio                      |
+
+### List All Events [GET]
+
++ Request
+
+  + Headers
+
+            Authorization: Bearer OAUTH2_TOKEN
+            Accept: application/json
+
++ Parameters
+    + venue_id (required, text) ... Identifies a specific venue.
+    + event_id (required, text) ... Identifies a specific event date.
+    + id (optional, text) ... Filter by a given seating capacity.
+    + page (optional, number) ... Paginate response to the given page number.
+
++ Response 200 (application/json)
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 200,
+            "error_code": "",
+            "error_description": "",
+            "parameters":
+            {
+              "venue_id": "125",
+              "event_id": "1",
+              "id": "",
+              "page": 2
+            },
+            "capacities": [
+              {
+                "id": "1",
+                "name": "LIGA",
+                "zones": [
+                  {
+                    "id": "1",
+                    "name": "GRADA PREFERENCIAL",
+                    "gates": 54,
+                    "seats": [
+                        {
+                          "id": "126",
+                          "row": 20,
+                          "seat": 3,
+                          "entrance": "",
+                          "gate": "1",
+                          "block": "1",
+                          "sector": ""
+                        },
+                        {
+                          "id": "127",
+                          "row": 20,
+                          "seat": 4,
+                          "entrance": "",
+                          "gate": "1",
+                          "block": "1",
+                          "sector": ""
+                        }
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "GRADA VIP",
+                    "gates": 2,
+                    "seats": [
+                        {
+                          "id": "128",
+                          "row": 10,
+                          "seat": 1,
+                          "entrance": "A",
+                          "gate": "1",
+                          "block": "1",
+                          "sector": ""
+                        },
+                        {
+                          "id": "129",
+                          "row": 10,
+                          "seat": 9,
+                          "entrance": "A",
+                          "gate": "1",
+                          "block": "1",
+                          "sector": ""
+                        }
+                    ]
+                  }
+                ]
+              }
+          ],
+          "links": [
+            {
+              "name": "next_page",
+              "prompt": "Next",
+              "rel": "next",
+              "href": "venues/125/events/12/capacities?page=3",
+              "render": "link"
+            },
+            {
+              "name": "previous_page",
+              "prompt": "Bext",
+              "rel": "back",
+              "href": "venues/125/events/12/capacities?page=1",
+              "render": "link"
+            }
+          ]
+         }
+        }
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+      {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "venue_id": "",
+              "event_id": "",
+              "id": "",
+              "page":
+            },
+            "venues": [],
+            "links": []
+          }
+        }
+
++ Response 401 (application/json)
+
+      {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 401,
+            "error_code": "Unauthorized",
+            "error_description": "Full authentication is required to access this resource"
+            "parameters":
+            {
+              "venue_id": "",
+              "event_id": "",
               "id": "",
               "page": 1
             },
