@@ -52,7 +52,6 @@ The following table contains the Spanish Soccer compatibility response fields de
             "error_description": "",
             "parameters":
             {
-              "id": "",
               "page": 2
             },
             "venues": [
@@ -352,7 +351,6 @@ The following table contains the Spanish Soccer compatibility response fields de
             "parameters":
             {
               "venue_id": "51",
-              "id": "",
               "page": 2
             },
             "events": [
@@ -522,8 +520,8 @@ The following table contains the Spanish Soccer compatibility response fields de
           }
         }
 
-## Venue seating capacity details Collection [/venueconfig-api/1.0/venues/{venue_id}/events/{event_id}/capacities{?id,page}]
-List all the seating capacities from a given venue and event with its key data. It is also allowed to filtering by Id and paging.
+## Venue seating capacity details Collection [/venueconfig-api/1.0/venues/{venue_id}/capacities{?id,page}]
+List all the seating capacities from a given venue with its key data. It is also allowed to filtering by Id and paging.
 The following table contains the Spanish Soccer compatibility response fields descriptions:
 
 | Response Field                   | Description                             |
@@ -544,7 +542,6 @@ The following table contains the Spanish Soccer compatibility response fields de
 
 + Parameters
     + venue_id (required, text) ... Identifies a specific venue.
-    + event_id (required, text) ... Identifies a specific event date.
     + id (optional, text) ... Filter by a given seating capacity.
     + page (optional, number) ... Paginate response to the given page number.
 
@@ -554,7 +551,7 @@ The following table contains the Spanish Soccer compatibility response fields de
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
@@ -565,7 +562,6 @@ The following table contains the Spanish Soccer compatibility response fields de
             {
               "venue_id": "125",
               "event_id": "1",
-              "id": "",
               "page": 2
             },
             "capacities": [
@@ -631,14 +627,14 @@ The following table contains the Spanish Soccer compatibility response fields de
               "name": "next_page",
               "prompt": "Next",
               "rel": "next",
-              "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities?page=3",
+              "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities?page=3",
               "render": "link"
             },
             {
               "name": "previous_page",
               "prompt": "Bext",
               "rel": "back",
-              "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities?page=1",
+              "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities?page=1",
               "render": "link"
             }
           ]
@@ -653,7 +649,7 @@ The following table contains the Spanish Soccer compatibility response fields de
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",
@@ -678,7 +674,7 @@ The following table contains the Spanish Soccer compatibility response fields de
           "collection":
           {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/capacities",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
             "request_date": "2015-08-05T08:40:51.620Z",

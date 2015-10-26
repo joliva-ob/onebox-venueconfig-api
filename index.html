@@ -60,7 +60,6 @@ The following table contains the Spanish Soccer compatibility response fields de
     "<span class="hljs-attribute">error_code</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
     "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
     "<span class="hljs-attribute">parameters</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
       "<span class="hljs-attribute">page</span>": <span class="hljs-value"><span class="hljs-number">2</span>
     </span>}</span>,
     "<span class="hljs-attribute">venues</span>": <span class="hljs-value">[
@@ -349,7 +348,6 @@ The following table contains the Spanish Soccer compatibility response fields de
     <span class="hljs-string">"parameters"</span>:
     {
       <span class="hljs-string">"venue_id"</span>: <span class="hljs-string">"51"</span>,
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">""</span>,
       <span class="hljs-string">"page"</span>: <span class="hljs-number">2</span>
     },
     <span class="hljs-string">"events"</span>: [
@@ -507,7 +505,7 @@ The following table contains the Spanish Soccer compatibility response fields de
     "<span class="hljs-attribute">venues</span>": <span class="hljs-value">[]</span>,
     "<span class="hljs-attribute">links</span>": <span class="hljs-value">[]
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="venue-seating-capacity-details-collection" class="resource"><h3 class="resource-heading">Venue seating capacity details Collection<a href="#venue-seating-capacity-details-collection" class="permalink">&para;</a></h3><p>List all the seating capacities from a given venue and event with its key data. It is also allowed to filtering by Id and paging.
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="venue-seating-capacity-details-collection" class="resource"><h3 class="resource-heading">Venue seating capacity details Collection<a href="#venue-seating-capacity-details-collection" class="permalink">&para;</a></h3><p>List all the seating capacities from a given venue with its key data. It is also allowed to filtering by Id and paging.
 The following table contains the Spanish Soccer compatibility response fields descriptions:</p>
 <table>
 <thead>
@@ -535,14 +533,13 @@ The following table contains the Spanish Soccer compatibility response fields de
 </tr>
 </tbody>
 </table>
-<div id="venue-seating-capacity-details-collection-get" class="action get"><h4 class="action-heading"><div class="name">List All Seating Capacities of a given Venue/Event</div><a href="#venue-seating-capacity-details-collection-get" class="method get">GET</a><code class="uri">/venueconfig-api/1.0/venues/{venue_id}/events/{event_id}/capacities{?id,page}</code></h4><div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>venue_id</dt><dd><code>text</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Identifies a specific venue.</p>
-</dd><dt>event_id</dt><dd><code>text</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Identifies a specific event date.</p>
+<div id="venue-seating-capacity-details-collection-get" class="action get"><h4 class="action-heading"><div class="name">List All Seating Capacities of a given Venue/Event</div><a href="#venue-seating-capacity-details-collection-get" class="method get">GET</a><code class="uri">/venueconfig-api/1.0/venues/{venue_id}/capacities{?id,page}</code></h4><div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>venue_id</dt><dd><code>text</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Identifies a specific venue.</p>
 </dd><dt>id</dt><dd><code>text</code>&nbsp;<span>(optional)</span>&nbsp;<p>Filter by a given seating capacity.</p>
 </dd><dt>page</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<p>Paginate response to the given page number.</p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer OAUTH2_TOKEN</span><br><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">collection</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-string">"1.0"</span></span>,
-    "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities"</span></span>,
+    "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities"</span></span>,
     "<span class="hljs-attribute">trace_id</span>": <span class="hljs-value"><span class="hljs-string">"94abc26e-173a-4ab2-a71b-863aed20f656"</span></span>,
     "<span class="hljs-attribute">span_id</span>": <span class="hljs-value"><span class="hljs-string">"34abc26e-173a-4ab2-a71b-863aed20f622"</span></span>,
     "<span class="hljs-attribute">request_date</span>": <span class="hljs-value"><span class="hljs-string">"2015-08-05T08:40:51.620Z"</span></span>,
@@ -552,7 +549,6 @@ The following table contains the Spanish Soccer compatibility response fields de
     "<span class="hljs-attribute">parameters</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">venue_id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
       "<span class="hljs-attribute">event_id</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
       "<span class="hljs-attribute">page</span>": <span class="hljs-value"><span class="hljs-number">2</span>
     </span>}</span>,
     "<span class="hljs-attribute">capacities</span>": <span class="hljs-value">[
@@ -618,14 +614,14 @@ The following table contains the Spanish Soccer compatibility response fields de
         "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"next_page"</span></span>,
         "<span class="hljs-attribute">prompt</span>": <span class="hljs-value"><span class="hljs-string">"Next"</span></span>,
         "<span class="hljs-attribute">rel</span>": <span class="hljs-value"><span class="hljs-string">"next"</span></span>,
-        "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities?page=3"</span></span>,
+        "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities?page=3"</span></span>,
         "<span class="hljs-attribute">render</span>": <span class="hljs-value"><span class="hljs-string">"link"</span>
       </span>},
       {
         "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"previous_page"</span></span>,
         "<span class="hljs-attribute">prompt</span>": <span class="hljs-value"><span class="hljs-string">"Bext"</span></span>,
         "<span class="hljs-attribute">rel</span>": <span class="hljs-value"><span class="hljs-string">"back"</span></span>,
-        "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities?page=1"</span></span>,
+        "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities?page=1"</span></span>,
         "<span class="hljs-attribute">render</span>": <span class="hljs-value"><span class="hljs-string">"link"</span>
       </span>}
     ]
@@ -634,7 +630,7 @@ The following table contains the Spanish Soccer compatibility response fields de
   "<span class="hljs-attribute">collection</span>":
   <span class="hljs-value">{
     "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-string">"1.0"</span></span>,
-    "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/12/capacities"</span></span>,
+    "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities"</span></span>,
     "<span class="hljs-attribute">trace_id</span>": <span class="hljs-value"><span class="hljs-string">"94abc26e-173a-4ab2-a71b-863aed20f656"</span></span>,
     "<span class="hljs-attribute">span_id</span>": <span class="hljs-value"><span class="hljs-string">"34abc26e-173a-4ab2-a71b-863aed20f622"</span></span>,
     "<span class="hljs-attribute">request_date</span>": <span class="hljs-value"><span class="hljs-string">"2015-08-05T08:40:51.620Z"</span></span>,
@@ -655,7 +651,7 @@ The following table contains the Spanish Soccer compatibility response fields de
   "<span class="hljs-attribute">collection</span>":
   <span class="hljs-value">{
     "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-string">"1.0"</span></span>,
-    "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events"</span></span>,
+    "<span class="hljs-attribute">href</span>": <span class="hljs-value"><span class="hljs-string">"http://www.oneboxtm.com/venueconfig-api/1.0/capacities"</span></span>,
     "<span class="hljs-attribute">trace_id</span>": <span class="hljs-value"><span class="hljs-string">"94abc26e-173a-4ab2-a71b-863aed20f656"</span></span>,
     "<span class="hljs-attribute">span_id</span>": <span class="hljs-value"><span class="hljs-string">"34abc26e-173a-4ab2-a71b-863aed20f622"</span></span>,
     "<span class="hljs-attribute">request_date</span>": <span class="hljs-value"><span class="hljs-string">"2015-08-05T08:40:51.620Z"</span></span>,
@@ -672,7 +668,7 @@ The following table contains the Spanish Soccer compatibility response fields de
     "<span class="hljs-attribute">venues</span>": <span class="hljs-value">[]</span>,
     "<span class="hljs-attribute">links</span>": <span class="hljs-value">[]
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 22 Oct 2015</p><script>/* eslint-env browser */
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 26 Oct 2015</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
