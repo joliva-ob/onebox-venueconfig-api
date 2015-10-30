@@ -10,7 +10,7 @@ To do so, we have used a **API Blueprint** standard, **apiary** as an online edi
 + [atom](http://atom.io)
 + [mockapi](https://github.com/joliva-ob/mockapi)
 + [github](https://github.com/joliva-ob/onebox-venueconfig-api)
-+ [onebox-developer](http://developer.oneboxtickets.com/venueconfig-api/index.html)
++ [onebox-developer](http://developer.oneboxtickets.com/venueconfig-api/)
 
 ### Usage
 1 edit the api blueprint document with apiary.io, or edit directly with Atom + blueprint plugin preview, language and lintr validation. This will provide a **.md** or **.apib** file.
