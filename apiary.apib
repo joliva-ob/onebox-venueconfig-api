@@ -145,8 +145,13 @@ The following table contains the Spanish Soccer compatibility response fields de
                 "links" : [
                   {
                     "rel" : "events",
-                    "href" : "http://www.oneboxtm.com/venueconfig-api/1.0/venues/51/events/",
+                    "href" : "http://www.oneboxtm.com/venueconfig-api/1.0/venues/51/events",
                     "prompt" : "Events"
+                  },
+                  {
+                    "rel" : "capacities",
+                    "href" : "http://www.oneboxtm.com/venueconfig-api/1.0/venues/51/capacities",
+                    "prompt" : "Capacities"
                   }
                 ]
               },
@@ -403,12 +408,12 @@ The following table contains the Spanish Soccer compatibility response fields de
                         {
                           "id": "126",
                           "name": "GRADA PREFERENCIA BAJA",
-                          "gates": 54
+                          "gates": "13"
                         },
                         {
                           "id": "127",
                           "name": "GRADA PREFERENCIA ALTA",
-                          "gates": 1
+                          "gates": "13-54"
                         }
                       ],
                       "prices": [
@@ -427,12 +432,12 @@ The following table contains the Spanish Soccer compatibility response fields de
                         {
                           "id": "12",
                           "name": "GRADA VIP BAJA",
-                          "gates": 54
+                          "gates": "1"
                         },
                         {
                           "id": "13",
                           "name": "GRADA VIP ALTA",
-                          "gates": 1
+                          "gates": "23"
                         }
                       ],
                       "prices": [
@@ -570,12 +575,14 @@ The following table contains the Spanish Soccer compatibility response fields de
                   {
                     "id": "1",
                     "name": "GRADA PREFERENCIAL",
-                    "gates": 54,
+                    "gates": "54",
                     "seats": [
                         {
                           "id": "126",
                           "row": 20,
+                          "row_name": "20"
                           "seat": 3,
+                          "seat_name": "3A",
                           "entrance": "",
                           "gate": "1",
                           "block": "1",
@@ -584,7 +591,9 @@ The following table contains the Spanish Soccer compatibility response fields de
                         {
                           "id": "127",
                           "row": 20,
-                          "seat": 4,
+                          "row_name": "20"
+                          "seat": 3,
+                          "seat_name": "3A",
                           "entrance": "",
                           "gate": "1",
                           "block": "1",
@@ -597,12 +606,14 @@ The following table contains the Spanish Soccer compatibility response fields de
                     "name": "GRADA VIP",
                     "creation_date": "",
                     "update_date": "2014-07-30T14:39:33.48+02:00",
-                    "gates": 2,
+                    "gates": "2",
                     "seats": [
                         {
                           "id": "128",
-                          "row": 10,
-                          "seat": 1,
+                          "row": 20,
+                          "row_name": "20"
+                          "seat": 3,
+                          "seat_name": "3A",
                           "entrance": "A",
                           "gate": "1",
                           "block": "1",
@@ -610,8 +621,10 @@ The following table contains the Spanish Soccer compatibility response fields de
                         },
                         {
                           "id": "129",
-                          "row": 10,
-                          "seat": 9,
+                          "row": 20,
+                          "row_name": "20"
+                          "seat": 3,
+                          "seat_name": "3A",
                           "entrance": "A",
                           "gate": "1",
                           "block": "1",
