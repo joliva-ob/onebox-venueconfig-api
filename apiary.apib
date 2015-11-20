@@ -28,8 +28,8 @@ The following table contains the Spanish Soccer compatibility response fields de
 
 + Parameters
 
-    + id (optional, text) ... Filter by a given venue id.
-    + page (optional, number) ... Paginate response to the given page number
+    + id (optional, text) - Filter by a given venue id.
+    + page (optional, number) - Paginate response to the given page number
 
 
 ### List All Venues [GET]
@@ -315,7 +315,7 @@ The following table contains the Spanish Soccer compatibility response fields de
           }
         }
 
-## Venue Resource Operations [/venueconfig-api/1.0/venues/{id}{?version,latest_from}]
+## Venue Resource Operations [/venueconfig-api/1.0/venues/{id}]
 
 Retrieve a concrete resource representation of a venue specified by its *id*. For a concrete venue a specific version of the venue can be retrieved using the parameter `version`. If you do not know the version you have 2 possibilities:
  * Getting the latest version by not specifying `version` nor `latest_from`.
@@ -323,9 +323,7 @@ Retrieve a concrete resource representation of a venue specified by its *id*. Fo
 
 + Parameters
 
-    + id (text) ... The venue identifier
-    + version (optional, number) ... Return a specific version of the venue. Mutualy exclusive with `latest_from`
-    + latest_from (optional, number) ... Given a version it returns the most recent venue's version grather than the provided version. Mutualy exclusive with `version`
+    + id (required, text) ... The venue identifier
 
 ### Retieve a single venue resource [GET]
 
@@ -558,6 +556,7 @@ The following table contains the Spanish Soccer compatibility response fields de
 | suporter_companion               | Spanish: acompañantes simpatizantes     |
 
 + Parameters
+
     + venue_id (required, text) ... Identifies a specific venue.
     + id (optional, text) ... Filter by a given event.
     + page (optional, number) ... Paginate response to the given page number.
