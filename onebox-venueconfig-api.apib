@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://developer.oneboxtickets.com/venueconfig-api/index.html
+HOST: http://onebox-api-url/1.0/venueconfig-api
 
 # onebox-venueconfig-api
 
@@ -30,6 +30,7 @@ The following table contains the Spanish Soccer compatibility response fields de
 
     + id (optional, text) ... Filter by a given venue id.
     + page (optional, number) ... Paginate response to the given page number
+
 
 
 ### List All Venues [GET]
@@ -1104,6 +1105,7 @@ The following table contains the Spanish Soccer compatibility response fields de
     + Headers
 
             Accept: application/json
+
 + Response 401 (application/json)
 
         {
@@ -1128,6 +1130,7 @@ The following table contains the Spanish Soccer compatibility response fields de
 
 
 ## Venue events Resource Operations [/venueconfig-api/1.0/venues/{venue_id}/capacities/{id}{?version,latest_from}]
+
 Retrieve a concrete resource representation of a venue's seating capacity specified by its *id*. For a concrete Venue seating capacity a specific version of the event can be retrieved using the parameter `version`. If you do not know the version you have 2 possibilities:
  * Getting the latest version by not specifying `version` nor `latest_from`.
  * Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue's seating capacity if there is one. In case that there is no newer version a `404` is returned.
