@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://contact-onebox.com
+HOST: http://onebox-api-url/1.0/venueconfig-api
 
 # onebox-venueconfig-api
 
@@ -32,9 +32,10 @@ The following table contains the Spanish Soccer compatibility response fields de
     + page (optional, number) ... Paginate response to the given page number
 
 
+
 ### List All Venues [GET]
 
-+ Request /venueconfig-api/1.0/venues
++ Request
 
     + Headers
 
@@ -271,12 +272,28 @@ The following table contains the Spanish Soccer compatibility response fields de
           }
         }
 
-+ Request  /venueconfig-api/1.0/venues
++ Response 400 (application/json)
 
-    + Headers
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "id": "",
+              "page": 1
+            }
+            "links": []
+          }
+        }
 
-            Accept: application/json
-            
 + Response 401 (application/json)
 
         {
@@ -292,6 +309,8 @@ The following table contains the Spanish Soccer compatibility response fields de
             "error_description": "Full authentication is required to access this resource"
             "parameters":
             {
+              "id": "",
+              "page": 1
             }
             "links": []
           }
@@ -300,10 +319,8 @@ The following table contains the Spanish Soccer compatibility response fields de
 ## Venue Resource Operations [/venueconfig-api/1.0/venues/{id}{?version,latest_from}]
 
 Retrieve a concrete resource representation of a venue specified by its *id*. For a concrete venue a specific version of the venue can be retrieved using the parameter `version`. If you do not know the version you have 2 possibilities:
-
-* Getting the latest version by not specifying `version` nor `latest_from`.
-* Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue if there is one. In case that there is no newer version a `404` is returned.
-
+ * Getting the latest version by not specifying `version` nor `latest_from`.
+ * Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue if there is one. In case that there is no newer version a `404` is returned.
 
 + Parameters
 
@@ -442,6 +459,36 @@ Retrieve a concrete resource representation of a venue specified by its *id*. Fo
             }
         }
 
++ Response 204 (application/json)
+
++ Request /venueconfig-api/1.0/venues/astringid
+
+    + Headers
+
+            Authorization: Bearer OAUTH2_TOKEN
+            Accept: application/json
+
++ Response 400 (application/json)
+
+        {
+            "collection":
+            {
+                "version": "1.0",
+                "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues",
+                "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+                "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+                "request_date": "2015-08-05T08:40:51.620Z",
+                "http_status_code": 400,
+                "error_code": "Bad Request",
+                "error_description": "There was a syntax error, check your params request and try it again."
+                "parameters":
+                {
+                    "id": "astringid"
+                }
+                "links": []
+            }
+        }
+
 + Request /venueconfig-api/1.0/venues/1?version=12&latest_from=45
 
     + Headers
@@ -465,14 +512,14 @@ Retrieve a concrete resource representation of a venue specified by its *id*. Fo
                 "parameters":
                 {
                     "id": "1",
-                    "version": "12",
-                    "latest_from": "45"
+                    "version": 12,
+                    "latest_from": 45
                 }
                 "links": []
             }
         }
 
-+ Request /venueconfig-api/1.0/venues/2
++ Request /venueconfig-api/1.0/venues/1
 
     + Headers
 
@@ -524,6 +571,7 @@ The following table contains the Spanish Soccer compatibility response fields de
 
             Authorization: Bearer OAUTH2_TOKEN
             Accept: application/json
+
 
 
 + Response 200 (application/json)
@@ -654,7 +702,27 @@ The following table contains the Spanish Soccer compatibility response fields de
           ]
          }
         }
-        
+
++ Response 400 (application/json)
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "venue_id": "adsf"
+            },
+            "links": []
+          }
+        }
 
 + Request /venueconfig-api/1.0/venues/125/events
 
@@ -689,23 +757,19 @@ The following table contains the Spanish Soccer compatibility response fields de
 ## Venue events Resource Operations [/venueconfig-api/1.0/venues/{venue_id}/events/{id}{?version,latest_from}]
 
 Retrieve a concrete resource representation of a venue's event specified by its *id*. For a concrete event a specific version of the event can be retrieved using the parameter `version`. If you do not know the version you have 2 possibilities:
-
-* Getting the latest version by not specifying `version` nor `latest_from`.
-* Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue if there is one. In case that there is no newer version a `404` is returned.
+ * Getting the latest version by not specifying `version` nor `latest_from`.
+ * Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue if there is one. In case that there is no newer version a `404` is returned.
 
 + Parameters
-
     + venue_id (required, text) ... Identifies a specific venue.
     + id (text) ... The event identifier
     + version (optional, number) ... Return a specific version of the event. Mutualy exclusive with `latest_from`
     + latest_from (optional, number) ... Given a version it returns the most recent event's version grather than the provided version. Mutualy exclusive with `version`
 
 ### Retieve a single venue's event resource [GET]
-
 + Request /venueconfig-api/1.0/venues/51/events/125
-
     + Headers
-    
+
             Authorization: Bearer OAUTH2_TOKEN
             Accept: application/json
 
@@ -822,12 +886,37 @@ Retrieve a concrete resource representation of a venue's event specified by its 
             }
         }
 
++ Request http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/asdfa
+    + Headers
+
+            Authorization: Bearer OAUTH2_TOKEN
+            Accept: application/json
++ Response 400 (application/json)
+
+        {
+            "collection":
+            {
+               "version": "1.0",
+               "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/events/asdfa",
+               "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+               "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+               "request_date": "2015-08-05T08:40:51.620Z",
+               "http_status_code": 400,
+               "error_code": "Bad Request",
+               "error_description": "There was a syntax error, check your params request and try it again."
+               "parameters":
+               {
+                 "venue_id": "adsf"
+               },
+               "links": []
+            }
+        }
+
 
 + Request /venueconfig-api/1.0/venues/125/events/12
     + Headers
 
             Accept: application/json
-            
 + Response 401 (application/json)
 
         {
@@ -985,10 +1074,38 @@ The following table contains the Spanish Soccer compatibility response fields de
          }
         }
 
++ Request /venueconfig-api/1.0/venues/asdf/capacities
+
+    + Headers
+
+            Authorization: Bearer OAUTH2_TOKEN
+            Accept: application/json
+
++ Response 400 (application/json)
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/asdf/capacities",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "venue_id": "asdf"
+            },
+            "links": []
+          }
+        }
 + Request /venueconfig-api/1.0/venues/125/capacities
     + Headers
 
             Accept: application/json
+
 + Response 401 (application/json)
 
         {
@@ -1015,12 +1132,10 @@ The following table contains the Spanish Soccer compatibility response fields de
 ## Venue events Resource Operations [/venueconfig-api/1.0/venues/{venue_id}/capacities/{id}{?version,latest_from}]
 
 Retrieve a concrete resource representation of a venue's seating capacity specified by its *id*. For a concrete Venue seating capacity a specific version of the event can be retrieved using the parameter `version`. If you do not know the version you have 2 possibilities:
-
-* Getting the latest version by not specifying `version` nor `latest_from`.
-* Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue's seating capacity if there is one. In case that there is no newer version a `404` is returned.
+ * Getting the latest version by not specifying `version` nor `latest_from`.
+ * Specify the last valid version that you know as `latest_from` value. This will cause to get the latest version of the venue's seating capacity if there is one. In case that there is no newer version a `404` is returned.
 
 + Parameters
-
     + venue_id (required, text) ... Identifies a specific venue.
     + id (optional, text) ... Filter by a given seating capacity.
     + version (optional, number) ... Return a specific version of the event. Mutualy exclusive with `latest_from`
@@ -1028,7 +1143,7 @@ Retrieve a concrete resource representation of a venue's seating capacity specif
 
 ### Retieve a single venue's Venue seating capacity resource [GET]
 
-+ Request http://www.oneboxtm.com/venueconfig-api/1.0/venues/125/capacities/1
++ Request
 
     + Headers
 
@@ -1127,7 +1242,32 @@ Retrieve a concrete resource representation of a venue's seating capacity specif
          }
         }
 
++ Request /venueconfig-api/1.0/venues/asdf/capacities
+    + Headers
 
+            Accept: application/json
+            Authorization: Bearer OAUTH2_TOKEN
+
++ Response 400 (application/json)
+
+        {
+          "collection":
+          {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/venueconfig-api/1.0/venues/asdf/capacities",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "span_id": "34abc26e-173a-4ab2-a71b-863aed20f622",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "http_status_code": 400,
+            "error_code": "Bad Request",
+            "error_description": "There was a syntax error, check your params request and try it again."
+            "parameters":
+            {
+              "venue_id": "asdf"
+            },
+            "links": []
+          }
+        }
 + Request /venueconfig-api/1.0/venues/125/capacities/1
     + Headers
 
